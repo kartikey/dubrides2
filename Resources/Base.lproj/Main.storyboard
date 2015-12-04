@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="1544.5" y="344.5"/>
         </scene>
-        <!--Find Rides Table View Controller-->
+        <!--Test Table View Controller-->
         <scene sceneID="TyV-MW-Xlh">
             <objects>
-                <tableViewController id="8PE-te-k2a" customClass="FindRidesTableViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="8PE-te-k2a" customClass="TestTableViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="182" sectionHeaderHeight="28" sectionFooterHeight="28" id="R35-Iu-dbk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
