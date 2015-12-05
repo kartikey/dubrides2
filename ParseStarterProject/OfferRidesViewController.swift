@@ -34,13 +34,14 @@ class OfferRidesViewController: UIViewController {
             print("Cannot be blank")
         }
         else {
-            _ = PFUser.currentUser()
+            
             let ride = PFObject(className:"rides")
             ride["origin"] = origin.text!
             ride["destination"] = destination.text!
             ride["date"] = date.text!
-            ride["seats"] = seats.text!
+            ride["seats"] = Int(seats.text!)
             ride["price"] = price.text!
+            ride["count"] = 0
             //ride["driver"] = currentUser?.username
             
 

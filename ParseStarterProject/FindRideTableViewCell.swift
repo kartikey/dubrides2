@@ -19,6 +19,43 @@ class FindRideTableViewCell: PFTableViewCell {
     var rideid: String?
 
     @IBAction func join(sender: UIButton) {
+        
+        var query = PFQuery(className:"rides")
+        query.getObjectInBackgroundWithId(rideid!) {
+            (ride: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let ride = ride {
+                if ride["seats"] as? NSNumber == ride["count"] as? NSNumber {
+                    print("Ride is full")
+                }
+                else {
+                    ride.incrementKey("seats")
+                    ride.saveInBackgroundWithBlock {
+                        (success: Bool, error: NSError?) -> Void in
+                        if (success) {
+                            
+                            
+//                            var currentuser = PFUser.currentUser()
+//                            var temparray = [String]()
+//                            temparray.append(self.rideid!)
+//                            currentuser!.addUniqueObjectsFromArray(temparray, forKey:"ridelist")
+//                            currentuser!.saveInBackground()
+//                            
+                            
+                            
+                            
+                            
+                            
+                            print("added to ride")
+                        } else {
+                            print(error)
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 //    override func awakeFromNib() {
 //        super.awakeFromNib()

@@ -38,7 +38,7 @@ class RegisterViewController: UIViewController {
             user.username = email.text!
             user.password = password.text!
             user.email = email.text!
-            
+            user["ridelist"] = [String]()
             
             
             user.signUpInBackgroundWithBlock {
