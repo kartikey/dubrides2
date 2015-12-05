@@ -1,5 +1,5 @@
 //
-//  MyRidesTableViewCell.swift
+//  FindRideTableViewCell.swift
 //  ParseStarterProject-Swift
 //
 //  Created by iGuest on 12/2/15.
@@ -7,18 +7,60 @@
 //
 
 import UIKit
+import Parse
+import ParseUI
 
-class MyRidesTableViewCell: UITableViewCell {
+class MyRidesTableViewCell: PFTableViewCell {
+    @IBOutlet weak var to: UILabel!
+    @IBOutlet weak var from: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var seats: UILabel!
+    var rideid: String?
+    
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBAction func leave(sender: UIButton) {
+        
+        let query = PFQuery(className:"rides")
+        query.getObjectInBackgroundWithId(rideid!) {
+            (ride: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let ride = ride {
+                if ride["count"]! as! NSNumber == ride["seats"]! as! NSNumber {
+                    print("Ride is full")
+                }
+                else {
+                    ride.incrementKey("count")
+                    ride.saveInBackgroundWithBlock {
+                        (success: Bool, error: NSError?) -> Void in
+                        if (success) {
+                            
+                            
+                            let currentuser = PFUser.currentUser()
+                            currentuser?.addObject(self.rideid!, forKey: "ridelist")
+                            
+                            
+                            currentuser!.saveInBackgroundWithBlock {
+                                (success: Bool, error: NSError?) -> Void in
+                                if (success) {
+                                    print("success")
+                                } else {
+                                    print(error?.description)
+                                }
+                            }
+                            
+                            
+                            
+                        } else {
+                            print(error)
+                        }
+                    }
+                }
+            }
+        }
+        
     }
-
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    
+    
 }

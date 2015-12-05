@@ -36,25 +36,21 @@ class FindRideTableViewCell: PFTableViewCell {
                         if (success) {
                             
                             
-                            var currentuser = PFUser.currentUser()
+                            let currentuser = PFUser.currentUser()
+                            currentuser?.addObject(self.rideid!, forKey: "ridelist")
                             
                             
-//                            currentuser!.saveInBackgroundWithBlock {
-//                                (success: Bool, error: NSError?) -> Void in
-//                                if (success) {
-//                                    print("success")
-//                                } else {
-//                                    print(error?.description)
-//                                }
-//                            }
+                            currentuser!.saveInBackgroundWithBlock {
+                                (success: Bool, error: NSError?) -> Void in
+                                if (success) {
+                                    print("success")
+                                } else {
+                                    print(error?.description)
+                                }
+                            }
 
                             
                             
-                            
-                            
-                            
-                            
-                            print("added to ride")
                         } else {
                             print(error)
                         }

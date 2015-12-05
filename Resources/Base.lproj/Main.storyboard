@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cyw-wb-4CK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cyw-wb-4CK">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -51,14 +51,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="P3I-Cr-1tE" firstAttribute="centerX" secondItem="Det-01-h89" secondAttribute="centerX" id="6H6-S7-ePx"/>
-                            <constraint firstItem="9tC-xZ-dZG" firstAttribute="centerX" secondItem="Det-01-h89" secondAttribute="centerX" id="Djj-zx-1yJ"/>
                             <constraint firstItem="g5N-WT-0Na" firstAttribute="top" secondItem="igl-bg-3Rm" secondAttribute="bottom" constant="195" id="DkQ-vs-IMY"/>
                             <constraint firstItem="g5N-WT-0Na" firstAttribute="leading" secondItem="Det-01-h89" secondAttribute="leadingMargin" constant="38" id="LeP-2j-6x0"/>
-                            <constraint firstItem="9tC-xZ-dZG" firstAttribute="top" secondItem="g5N-WT-0Na" secondAttribute="bottom" constant="17" id="ONr-dp-Wx1"/>
+                            <constraint firstItem="9tC-xZ-dZG" firstAttribute="leading" secondItem="g5N-WT-0Na" secondAttribute="leading" id="Ruj-6c-cMy"/>
+                            <constraint firstItem="9tC-xZ-dZG" firstAttribute="trailing" secondItem="g5N-WT-0Na" secondAttribute="trailing" id="WMb-sR-bzf"/>
                             <constraint firstItem="vuq-Xn-YBG" firstAttribute="top" secondItem="P3I-Cr-1tE" secondAttribute="bottom" constant="94" id="b2a-Rp-mS2"/>
                             <constraint firstItem="KDU-Qm-KZc" firstAttribute="centerX" secondItem="Det-01-h89" secondAttribute="centerX" id="g6P-as-qWZ"/>
                             <constraint firstItem="g5N-WT-0Na" firstAttribute="centerX" secondItem="Det-01-h89" secondAttribute="centerX" id="gvL-dh-D5Y"/>
-                            <constraint firstItem="9tC-xZ-dZG" firstAttribute="width" secondItem="g5N-WT-0Na" secondAttribute="width" id="kZh-GK-0eY"/>
+                            <constraint firstItem="9tC-xZ-dZG" firstAttribute="top" secondItem="g5N-WT-0Na" secondAttribute="bottom" constant="17" id="mYu-hX-jsF"/>
                             <constraint firstItem="KDU-Qm-KZc" firstAttribute="top" secondItem="g5N-WT-0Na" secondAttribute="bottom" constant="86" id="umR-KA-1Gf"/>
                         </constraints>
                     </view>
@@ -144,32 +144,32 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="182"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RCz-wW-D9X" id="b1i-ks-ug0">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="181"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="181.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YB-xU-GFS">
-                                            <rect key="frame" x="24" y="54" width="44" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2YB-xU-GFS">
+                                            <rect key="frame" x="24" y="53" width="44" height="22.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMv-xE-K30">
-                                            <rect key="frame" x="24" y="97" width="41" height="21"/>
+                                            <rect key="frame" x="24" y="98" width="41" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Co5-Zb-RZg">
-                                            <rect key="frame" x="24" y="136" width="44" height="21"/>
+                                            <rect key="frame" x="24" y="136" width="44" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seats:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvX-js-HWr">
-                                            <rect key="frame" x="153" y="136" width="101" height="21"/>
+                                            <rect key="frame" x="153" y="136" width="101" height="20.5"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="101" id="TWL-T5-npm"/>
@@ -187,7 +187,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTE-X5-PtG">
-                                            <rect key="frame" x="24" y="17" width="24" height="21"/>
+                                            <rect key="frame" x="24" y="17" width="23.5" height="20.5"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,39 +246,51 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="181"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FqJ-QX-N8G" id="goi-WM-Nmw">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="180.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCJ-1O-FwV">
-                                            <rect key="frame" x="17" y="45" width="44" height="21"/>
+                                            <rect key="frame" x="17" y="44" width="44" height="20.5"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCp-O3-Rin">
-                                            <rect key="frame" x="17" y="91" width="41" height="21"/>
+                                            <rect key="frame" x="17" y="89" width="41" height="20.5"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg4-zo-ERL">
-                                            <rect key="frame" x="17" y="136" width="44" height="21"/>
+                                            <rect key="frame" x="17" y="134" width="44" height="20.5"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seats:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSH-MG-kHI">
-                                            <rect key="frame" x="160" y="136" width="48" height="21"/>
+                                            <rect key="frame" x="160" y="134" width="91" height="20.5"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="91" id="gPe-PE-LNY"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dll-UP-81j">
-                                            <rect key="frame" x="294" y="132" width="40" height="30"/>
+                                            <rect key="frame" x="294" y="130" width="40" height="30"/>
+                                            <animations/>
                                             <state key="normal" title="Leave"/>
+                                            <connections>
+                                                <action selector="leave:" destination="FqJ-QX-N8G" eventType="touchUpInside" id="k0r-Yf-HaT"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ay-er-8dm">
-                                            <rect key="frame" x="17" y="8" width="24" height="21"/>
+                                            <rect key="frame" x="17" y="8" width="23.5" height="20.5"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -301,6 +313,13 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="date" destination="aCp-O3-Rin" id="fsq-qc-2bv"/>
+                                    <outlet property="from" destination="RCJ-1O-FwV" id="UzK-ri-A3T"/>
+                                    <outlet property="price" destination="eg4-zo-ERL" id="3pJ-BQ-Hg2"/>
+                                    <outlet property="seats" destination="YSH-MG-kHI" id="6ep-QN-rju"/>
+                                    <outlet property="to" destination="2Ay-er-8dm" id="d9i-tE-njQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

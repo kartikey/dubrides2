@@ -1,95 +1,64 @@
 //
-//  MyRidesTableViewController.swift
+//  TestTableViewController.swift
 //  ParseStarterProject-Swift
 //
-//  Created by iGuest on 12/2/15.
+//  Created by iGuest on 12/4/15.
 //  Copyright © 2015 Parse. All rights reserved.
 //
 
 import UIKit
+import Parse
+import ParseUI
 
-class MyRidesTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+class MyRidesTableViewController : PFQueryTableViewController {
+    
+    override init(style: UITableViewStyle, className: String?) {
+        super.init(style: style, className: className)
+        parseClassName = "rides"
+        pullToRefreshEnabled = true
+        paginationEnabled = true
+        objectsPerPage = 25
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        parseClassName = "rides"
+        pullToRefreshEnabled = true
+        paginationEnabled = true
+        objectsPerPage = 25
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+    
+    override func queryForTable() -> PFQuery {
+        let query = PFQuery(className: self.parseClassName!)
+        
+        query.whereKey("objectId", containedIn: PFUser.currentUser()!["ridelist"] as! [AnyObject])
+        
+        query.orderByDescending("createdAt")
+        
+        return query
     }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath, object: PFObject?) -> PFTableViewCell? {
+        let cellIdentifier = "myridecell"
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? MyRidesTableViewCell
+        //        if cell == nil {
+        //            cell = PFTableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier)
+        //        }
+        
+        // Configure the cell to show todo item with a priority at the bottom
+        if let object = object {
+            cell!.to.text = "To:" + (object["destination"] as? String)!
+            cell!.from.text = "From:" + (object["origin"] as? String)!
+            cell!.date.text = "Date:" + (object["date"] as? String)!
+            cell!.price.text = "Price:" + (object["price"] as? String)!
+            cell!.seats.text = "Seats:" + String(object["count"]! as! NSNumber) + "/" + String(object["seats"]! as! NSNumber)
+            
+            cell!.rideid = object.objectId!
+            
+            
+        }
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
