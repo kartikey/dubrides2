@@ -168,9 +168,12 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seats:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvX-js-HWr">
-                                            <rect key="frame" x="153" y="136" width="48" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seats:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvX-js-HWr">
+                                            <rect key="frame" x="153" y="136" width="101" height="21"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="101" id="TWL-T5-npm"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -200,7 +203,9 @@
                                         <constraint firstItem="ZMv-xE-K30" firstAttribute="leading" secondItem="Co5-Zb-RZg" secondAttribute="leading" id="Cgc-8O-pFF"/>
                                         <constraint firstAttribute="bottom" secondItem="ZMv-xE-K30" secondAttribute="bottom" constant="63" id="JnQ-p2-UYc"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="PQI-5A-f99" secondAttribute="trailing" constant="26" id="a5d-YN-Wbe"/>
+                                        <constraint firstItem="VvX-js-HWr" firstAttribute="leading" secondItem="Co5-Zb-RZg" secondAttribute="trailing" constant="85" id="fqq-zH-erC"/>
                                         <constraint firstItem="OTE-X5-PtG" firstAttribute="leading" secondItem="b1i-ks-ug0" secondAttribute="leadingMargin" constant="16" id="hTN-rC-xeR"/>
+                                        <constraint firstItem="VvX-js-HWr" firstAttribute="top" secondItem="ZMv-xE-K30" secondAttribute="bottom" constant="18" id="hvy-Yw-jyY"/>
                                         <constraint firstItem="PQI-5A-f99" firstAttribute="top" secondItem="ZMv-xE-K30" secondAttribute="bottom" constant="14" id="jAe-DQ-yHl"/>
                                         <constraint firstItem="ZMv-xE-K30" firstAttribute="leading" secondItem="2YB-xU-GFS" secondAttribute="leading" id="rOw-4x-Ncw"/>
                                         <constraint firstItem="2YB-xU-GFS" firstAttribute="top" secondItem="OTE-X5-PtG" secondAttribute="bottom" constant="16" id="xpz-UK-zkU"/>

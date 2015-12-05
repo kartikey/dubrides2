@@ -57,11 +57,12 @@ class FindRidesTableViewController : PFQueryTableViewController {
         
         // Configure the cell to show todo item with a priority at the bottom
         if let object = object {
-            cell!.to.text = object["destination"] as? String
-            cell!.from.text = object["origin"] as? String
-            cell!.date.text = object["date"] as? String
-            cell!.price.text = object["price"] as? String
-            cell!.seats.text = object["seats"] as? String
+            cell!.to.text = "To:" + (object["destination"] as? String)!
+            cell!.from.text = "From:" + (object["origin"] as? String)!
+            cell!.date.text = "Date:" + (object["date"] as? String)!
+            cell!.price.text = "Price:" + (object["price"] as? String)!
+            cell!.seats.text = "Seats:" + String(object["count"]! as! NSNumber) + "/" + String(object["seats"]! as! NSNumber)
+ 
             cell!.rideid = object["objectId"] as? String
         }
         
