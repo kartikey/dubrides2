@@ -63,7 +63,9 @@ class FindRidesTableViewController : PFQueryTableViewController {
             cell!.price.text = "Price:" + (object["price"] as? String)!
             cell!.seats.text = "Seats:" + String(object["count"]! as! NSNumber) + "/" + String(object["seats"]! as! NSNumber)
  
-            cell!.rideid = object["objectId"] as? String
+            cell!.rideid = object.objectId!
+            
+
         }
         
         return cell

@@ -26,11 +26,11 @@ class FindRideTableViewCell: PFTableViewCell {
             if error != nil {
                 print(error)
             } else if let ride = ride {
-                if ride["seats"] as? NSNumber == ride["count"] as? NSNumber {
+                if ride["count"]! as! NSNumber == ride["seats"]! as! NSNumber {
                     print("Ride is full")
                 }
                 else {
-                    ride.incrementKey("seats")
+                    ride.incrementKey("count")
                     ride.saveInBackgroundWithBlock {
                         (success: Bool, error: NSError?) -> Void in
                         if (success) {
@@ -57,15 +57,6 @@ class FindRideTableViewCell: PFTableViewCell {
         }
         
     }
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//        // Initialization code
-//    }
-//
-//    override func setSelected(selected: Bool, animated: Bool) {
-//        super.setSelected(selected, animated: animated)
-//
-//        // Configure the view for the selected state
-//    }
+
 
 }
