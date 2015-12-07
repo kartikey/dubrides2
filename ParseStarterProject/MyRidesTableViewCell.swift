@@ -27,18 +27,18 @@ class MyRidesTableViewCell: PFTableViewCell {
             if error != nil {
                 print(error)
             } else if let ride = ride {
-                if ride["count"]! as! NSNumber == ride["seats"]! as! NSNumber {
-                    print("Ride is full")
+                if ride["count"]! as! NSNumber == 0 {
+                    print("Ride is empty")
                 }
                 else {
-                    ride.incrementKey("count")
+                    ride.incrementKey("count", byAmount: -1)
                     ride.saveInBackgroundWithBlock {
                         (success: Bool, error: NSError?) -> Void in
                         if (success) {
                             
                             
                             let currentuser = PFUser.currentUser()
-                            currentuser?.addObject(self.rideid!, forKey: "ridelist")
+                            currentuser?.removeObject(self.rideid!, forKey: "ridelist")
                             
                             
                             currentuser!.saveInBackgroundWithBlock {

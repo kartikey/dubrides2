@@ -42,6 +42,7 @@ class OfferRidesViewController: UIViewController {
             ride["seats"] = Int(seats.text!)
             ride["price"] = price.text!
             ride["count"] = 0
+            
             //ride["driver"] = currentUser?.username
             
 
