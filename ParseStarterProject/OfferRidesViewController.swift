@@ -42,7 +42,10 @@ class OfferRidesViewController: UIViewController {
             ride["seats"] = Int(seats.text!)
             ride["price"] = price.text!
             ride["count"] = 0
-            
+            let roleACL = PFACL()
+            roleACL.publicReadAccess = true
+            roleACL.publicWriteAccess = true
+            ride.ACL = roleACL
             //ride["driver"] = currentUser?.username
             
 

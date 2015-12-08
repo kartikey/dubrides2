@@ -21,6 +21,10 @@ class MyRidesTableViewCell: PFTableViewCell {
 
     @IBAction func leave(sender: UIButton) {
         
+        let view = self.superview?.superview
+        
+        let tableView = view as! UITableView
+        
         let query = PFQuery(className:"rides")
         query.getObjectInBackgroundWithId(rideid!) {
             (ride: PFObject?, error: NSError?) -> Void in
@@ -29,6 +33,7 @@ class MyRidesTableViewCell: PFTableViewCell {
             } else if let ride = ride {
                 if ride["count"]! as! NSNumber == 0 {
                     print("Ride is empty")
+                    tableView.reloadData()
                 }
                 else {
                     ride.incrementKey("count", byAmount: -1)
@@ -45,6 +50,7 @@ class MyRidesTableViewCell: PFTableViewCell {
                                 (success: Bool, error: NSError?) -> Void in
                                 if (success) {
                                     print("success")
+                                    tableView.reloadData()
                                 } else {
                                     print(error?.description)
                                 }
@@ -61,6 +67,7 @@ class MyRidesTableViewCell: PFTableViewCell {
         }
         
     }
+    
     
     
 }

@@ -6,15 +6,63 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParseStarterProject/FindRideTableViewCell.swift"
-            timestampString = "471219860.191591"
+            timestampString = "471228302.66818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "join(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ParseStarterProject_Swift.FindRideTableViewCell.(join (ParseStarterProject_Swift.FindRideTableViewCell) -&gt; (__ObjC.UIButton) -&gt; ()).(closure #1)"
+                  moduleName = "ParseStarterProject-Swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/Desktop/dubrides2/ParseStarterProject/FindRideTableViewCell.swift"
+                  timestampString = "471226364.921025"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "317">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ParseStarterProject_Swift.FindRideTableViewCell.(join (ParseStarterProject_Swift.FindRideTableViewCell) -&gt; (__ObjC.UIButton) -&gt; ()).(closure #1)"
+                  moduleName = "ParseStarterProject-Swift"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/iguest/Desktop/dubrides2/ParseStarterProject/FindRideTableViewCell.swift"
+                  timestampString = "471226364.921298"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "322">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParseStarterProject/FindRideTableViewCell.swift"
+            timestampString = "471228302.66818"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "join(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -22,15 +70,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ParseStarterProject/FindRideTableViewCell.swift"
-            timestampString = "471219862.991442"
+            timestampString = "471228302.66818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "join(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParseStarterProject/FindRideTableViewCell.swift"
+            timestampString = "471228302.66818"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "join(_:)"
             landmarkType = "5">
          </BreakpointContent>

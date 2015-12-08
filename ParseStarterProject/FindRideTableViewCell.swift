@@ -20,6 +20,10 @@ class FindRideTableViewCell: PFTableViewCell {
 
     @IBAction func join(sender: UIButton) {
         
+        let view = self.superview?.superview
+        
+        let tableView = view as! UITableView
+        
         let query = PFQuery(className:"rides")
         query.getObjectInBackgroundWithId(rideid!) {
             (ride: PFObject?, error: NSError?) -> Void in
@@ -39,11 +43,12 @@ class FindRideTableViewCell: PFTableViewCell {
                             let currentuser = PFUser.currentUser()
                             currentuser?.addObject(self.rideid!, forKey: "ridelist")
                             
-                            
+                        
                             currentuser!.saveInBackgroundWithBlock {
                                 (success: Bool, error: NSError?) -> Void in
                                 if (success) {
                                     print("success")
+                                    
                                 } else {
                                     print(error?.description)
                                 }
@@ -57,7 +62,10 @@ class FindRideTableViewCell: PFTableViewCell {
                     }
                 }
             }
+            tableView.reloadData()
         }
+        
+        
         
     }
 

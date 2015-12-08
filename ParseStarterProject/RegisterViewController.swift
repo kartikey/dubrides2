@@ -47,7 +47,13 @@ class RegisterViewController: UIViewController {
                     let errorString = error.userInfo["error"] as? NSString
                     print(errorString)
                 } else {
-                    self.performSegueWithIdentifier("toMain", sender: nil)
+                    PFUser.logOutInBackgroundWithBlock{ (error) -> Void in
+                        if let _ = error {
+                            print("log out didnt work")
+                        }else {
+                            self.performSegueWithIdentifier("toLogin", sender: nil)
+                        }
+                    }
                 }
             }
         }

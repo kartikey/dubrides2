@@ -11,6 +11,7 @@ import Parse
 import ParseUI
 
 class FindRidesTableViewController : PFQueryTableViewController {
+    @IBOutlet var mytableView: UITableView!
     
     override init(style: UITableViewStyle, className: String?) {
         super.init(style: style, className: className)
@@ -27,6 +28,7 @@ class FindRidesTableViewController : PFQueryTableViewController {
         paginationEnabled = true
         objectsPerPage = 25
     }
+
     
     override func queryForTable() -> PFQuery {
         let query = PFQuery(className: self.parseClassName!)
@@ -41,7 +43,6 @@ class FindRidesTableViewController : PFQueryTableViewController {
         //            query.cachePolicy = PFCachePolicy.CacheThenNetwork
         //
         //        }
-        
         query.orderByDescending("createdAt")
         
         return query
@@ -70,4 +71,5 @@ class FindRidesTableViewController : PFQueryTableViewController {
         
         return cell
     }
+    
 }
