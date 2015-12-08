@@ -15,6 +15,12 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        email.resignFirstResponder()
+        password.resignFirstResponder()
+        confirmPassword.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +33,11 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func submit(sender: UIButton) {
+        
+        email.resignFirstResponder()
+        password.resignFirstResponder()
+        confirmPassword.resignFirstResponder()
+        
         if email.text! == "" || password.text == "" || confirmPassword == "" {
             print("Cannot be blank")
         }

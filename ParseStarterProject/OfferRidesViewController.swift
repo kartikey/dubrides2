@@ -17,6 +17,14 @@ class OfferRidesViewController: UIViewController {
     @IBOutlet weak var seats: UITextField!
     @IBOutlet weak var price: UITextField!
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        origin.resignFirstResponder()
+        destination.resignFirstResponder()
+        date.resignFirstResponder()
+        seats.resignFirstResponder()
+        price.resignFirstResponder()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +37,12 @@ class OfferRidesViewController: UIViewController {
     }
     
     @IBAction func create(sender: UIButton) {
+        
+        origin.resignFirstResponder()
+        destination.resignFirstResponder()
+        date.resignFirstResponder()
+        seats.resignFirstResponder()
+        price.resignFirstResponder()
         
         if origin.text! == "" || destination.text! == "" || date.text! == "" || seats.text! == "" || price.text! == "" {
             print("Cannot be blank")
@@ -52,7 +66,22 @@ class OfferRidesViewController: UIViewController {
             ride.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
+                    let currentuser = PFUser.currentUser()
+                    currentuser?.addObject(ride.objectId!, forKey: "ridelist")
+                    
+                    
+                    currentuser!.saveInBackgroundWithBlock {
+                        (success: Bool, error: NSError?) -> Void in
+                        if (success) {
+                            
+                            print("success")
+                            
+                        } else {
+                            print(error?.description)
+                        }
+                    }
                     self.performSegueWithIdentifier("toMain", sender: nil)
+                    
                 } else {
                     print(error?.description)
                 }
