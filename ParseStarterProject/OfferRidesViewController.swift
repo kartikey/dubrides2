@@ -60,7 +60,7 @@ class OfferRidesViewController: UIViewController {
             roleACL.publicReadAccess = true
             roleACL.publicWriteAccess = true
             ride.ACL = roleACL
-            //ride["driver"] = currentUser?.username
+            ride["driver"] = PFUser.currentUser()!.username
             
 
             ride.saveInBackgroundWithBlock {
