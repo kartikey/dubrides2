@@ -51,7 +51,7 @@ class RidesOfferedByMeTableViewController : PFQueryTableViewController {
             cell!.to.text = "To:" + (object["destination"] as? String)!
             cell!.from.text = "From:" + (object["origin"] as? String)!
             cell!.date.text = "Date:" + (object["date"] as? String)!
-            cell!.price.text = "Price:" + (object["price"] as? String)!
+            cell!.price.text = "Price: $" + (object["price"] as? String)!
             cell!.seats.text = "Seats:" + String(object["count"]! as! NSNumber) + "/" + String(object["seats"]! as! NSNumber)
             
             cell!.rideid = object.objectId!
@@ -65,7 +65,7 @@ class RidesOfferedByMeTableViewController : PFQueryTableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
+                        // Delete the row from the data source
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

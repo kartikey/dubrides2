@@ -22,23 +22,31 @@ class RidesOfferedByMeTableViewCell: PFTableViewCell {
     
     @IBAction func delRide(sender: UIButton) {
      
-        
-
-        
-        let query = PFQuery(className:"rides")
-        query.getObjectInBackgroundWithId(rideid!) {
-            (ride: PFObject?, error: NSError?) -> Void in
-            if error != nil {
-                print(error)
-            } else if let ride = ride {
-                
-                ride.deleteInBackground()
-                self.removeFromSuperview()
-
-            
-            
+        // UIAlertController
+        let alertController = UIAlertController(title: nil, message:"Are you sure you want to delete the ride?", preferredStyle:.Alert)
+        let NoAction = UIAlertAction(title: "No", style: .Default, handler: nil)
+        alertController.addAction(NoAction)
+        let YesAction = UIAlertAction(title: "Yes", style: .Destructive, handler: {(action) -> Void in
+            let query = PFQuery(className:"rides")
+            query.getObjectInBackgroundWithId(self.rideid!) {
+                (ride: PFObject?, error: NSError?) -> Void in
+                if error != nil {
+                    print(error)
+                } else if let ride = ride {
+                    
+                    ride.deleteInBackground()
+                    self.removeFromSuperview()
+                    
+                }
             }
-        }
+            
+        })
+        alertController.addAction(YesAction)
+        self.window?.rootViewController?.presentViewController(alertController, animated: true, completion: nil)
+
+
+        
+       
         
     }
     

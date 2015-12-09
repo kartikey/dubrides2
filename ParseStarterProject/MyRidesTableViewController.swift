@@ -51,7 +51,7 @@ class MyRidesTableViewController : PFQueryTableViewController {
             cell!.to.text = "To:" + (object["destination"] as? String)!
             cell!.from.text = "From:" + (object["origin"] as? String)!
             cell!.date.text = "Date:" + (object["date"] as? String)!
-            cell!.price.text = "Price:" + (object["price"] as? String)!
+            cell!.price.text = "Price: $" + (object["price"] as? String)!
             cell!.seats.text = "Seats:" + String(object["count"]! as! NSNumber) + "/" + String(object["seats"]! as! NSNumber)
             
             cell!.rideid = object.objectId!

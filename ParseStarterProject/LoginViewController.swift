@@ -40,6 +40,12 @@ class LoginViewController: UIViewController {
         
         if email.text! == "" || password.text! == "" {
             print("Fields cannot be blank")
+            // UIAlertController
+            let alertController = UIAlertController(title: nil, message:"Please enter a UW email address and Password to continue.", preferredStyle:.Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            presentViewController(alertController, animated: true, completion: nil)
+            
         }
         else {
             PFUser.logInWithUsernameInBackground(email.text!, password:password.text!) {
@@ -48,6 +54,11 @@ class LoginViewController: UIViewController {
                     self.performSegueWithIdentifier("toMain", sender: nil)
                 } else {
                     print("Invalid credentials")
+                    // UIAlertController
+                    let alertController = UIAlertController(title: nil, message:"The UW Email ID or Password you entered is incorrect. Please click 'OK' to reenter your UW Email ID and Password.", preferredStyle:.Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alertController.addAction(defaultAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
                 }
             }
         }

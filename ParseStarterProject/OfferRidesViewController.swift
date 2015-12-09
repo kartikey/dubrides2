@@ -60,6 +60,12 @@ class OfferRidesViewController: UIViewController {
         
         if origin.text! == "" || destination.text! == "" || date.text! == "" || seats.text! == "" || price.text! == "" {
             print("Cannot be blank")
+            // UIAlertController
+            let alertController = UIAlertController(title: nil, message:"Please enter all information to continue.", preferredStyle:.Alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            presentViewController(alertController, animated: true, completion: nil)
+
         }
         else {
             
@@ -81,8 +87,18 @@ class OfferRidesViewController: UIViewController {
             ride.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
+                    // UIAlertController
+                    let alertController = UIAlertController(title: nil, message:"Your ride has been created.", preferredStyle:.Alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {(action) -> Void in
+                        self.performSegueWithIdentifier("toMain", sender: nil)
+                        
+                    })
+                    
+                    alertController.addAction(defaultAction)
+                    self.presentViewController(alertController, animated: true, completion: nil)
+
             
-                    self.performSegueWithIdentifier("toMain", sender: nil)
+                    
                     
                 } else {
                     print(error?.description)
