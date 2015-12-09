@@ -94,28 +94,28 @@
                                     <segue destination="8PE-te-k2a" kind="show" identifier="toFindRides" id="B8N-Kn-O3Q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJN-He-icn">
-                                <rect key="frame" x="146" y="367" width="84" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Offer A Ride"/>
-                                <connections>
-                                    <segue destination="YZM-HM-WXk" kind="show" identifier="toOfferRides" id="zEk-pR-PCB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pa-T3-jjy">
-                                <rect key="frame" x="144" y="286" width="88" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pa-T3-jjy">
+                                <rect key="frame" x="144" y="350" width="88" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Joined Rides"/>
                                 <connections>
                                     <segue destination="hjk-fB-UyT" kind="show" identifier="toMyRides" id="eN1-uo-Uiv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2l-Ro-r79">
-                                <rect key="frame" x="117" y="433" width="141" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C2l-Ro-r79">
+                                <rect key="frame" x="118" y="432" width="141" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Rides Offered By Me"/>
                                 <connections>
                                     <segue destination="YaB-5A-gBU" kind="show" identifier="toRidesByMe" id="39H-Kr-JlC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJN-He-icn">
+                                <rect key="frame" x="145" y="274" width="84" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Offer A Ride"/>
+                                <connections>
+                                    <segue destination="YZM-HM-WXk" kind="show" identifier="toOfferRides" id="zEk-pR-PCB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -194,7 +194,7 @@
                                             <animations/>
                                             <state key="normal" title="Join"/>
                                             <connections>
-                                                <action selector="join:" destination="RCz-wW-D9X" eventType="touchUpInside" id="RgV-9a-k20"/>
+                                                <action selector="join:" destination="RCz-wW-D9X" eventType="touchUpInside" id="Pjf-Zv-chh"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OTE-X5-PtG">
@@ -224,6 +224,7 @@
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
+                                    <outlet property="button" destination="PQI-5A-f99" id="fEQ-mb-GZs"/>
                                     <outlet property="date" destination="ZMv-xE-K30" id="dLc-Dw-pyc"/>
                                     <outlet property="from" destination="2YB-xU-GFS" id="s59-tS-bSO"/>
                                     <outlet property="price" destination="Co5-Zb-RZg" id="2To-NK-u3F"/>
