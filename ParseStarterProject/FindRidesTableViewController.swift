@@ -43,6 +43,7 @@ class FindRidesTableViewController : PFQueryTableViewController {
         //            query.cachePolicy = PFCachePolicy.CacheThenNetwork
         //        //        }
         query.whereKey("driver", notEqualTo: PFUser.currentUser()!.username!)
+        query.whereKey("space", greaterThan: 0)
         query.orderByDescending("createdAt")
         
         return query

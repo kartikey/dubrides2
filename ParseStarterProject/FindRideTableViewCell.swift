@@ -39,6 +39,7 @@ class FindRideTableViewCell: PFTableViewCell {
                 }
                 else {
                     ride.incrementKey("count")
+                    ride.incrementKey("space", byAmount: -1)
                     ride.saveInBackgroundWithBlock {
                         (success: Bool, error: NSError?) -> Void in
                         if (success) {
@@ -84,6 +85,7 @@ class FindRideTableViewCell: PFTableViewCell {
                     }
                     else {
                         ride.incrementKey("count", byAmount: -1)
+                        ride.incrementKey("space", byAmount: 1)
                         ride.saveInBackgroundWithBlock {
                             (success: Bool, error: NSError?) -> Void in
                             if (success) {

@@ -75,6 +75,7 @@ class OfferRidesViewController: UIViewController {
             roleACL.publicWriteAccess = true
             ride.ACL = roleACL
             ride["driver"] = PFUser.currentUser()!.username
+            ride["space"] = Int(seats.text!)
             
 
             ride.saveInBackgroundWithBlock {
