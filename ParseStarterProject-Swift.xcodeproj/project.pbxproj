@@ -19,7 +19,6 @@
 		9D2BF7981C1251360093C119 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BA81801A49E10C00E65899 /* ParseUI.framework */; };
 		9D5163B51C1787F1006AD19F /* RidesOfferedByMeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5163B41C1787F1006AD19F /* RidesOfferedByMeTableViewController.swift */; };
 		9D5163B71C178802006AD19F /* RidesOfferedByMeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5163B61C178802006AD19F /* RidesOfferedByMeTableViewCell.swift */; };
-		9D5163B91C178BE5006AD19F /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5163B81C178BE5006AD19F /* TableViewController.swift */; };
 		9D8D895A1C0FB80D00AEB168 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8D89591C0FB80D00AEB168 /* LoginViewController.swift */; };
 		9D8D895C1C0FB82700AEB168 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8D895B1C0FB82700AEB168 /* MainMenuViewController.swift */; };
 		9D8D895E1C0FB82E00AEB168 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D8D895D1C0FB82E00AEB168 /* RegisterViewController.swift */; };
@@ -47,7 +46,6 @@
 		81BA81801A49E10C00E65899 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		9D5163B41C1787F1006AD19F /* RidesOfferedByMeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidesOfferedByMeTableViewController.swift; sourceTree = "<group>"; };
 		9D5163B61C178802006AD19F /* RidesOfferedByMeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidesOfferedByMeTableViewCell.swift; sourceTree = "<group>"; };
-		9D5163B81C178BE5006AD19F /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		9D8D89591C0FB80D00AEB168 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9D8D895B1C0FB82700AEB168 /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		9D8D895D1C0FB82E00AEB168 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 				9D8D895F1C0FB83400AEB168 /* OfferRidesViewController.swift */,
 				9D8D89611C0FB84800AEB168 /* FindRidesTableViewController.swift */,
 				9D8D89651C0FB86000AEB168 /* FindRideTableViewCell.swift */,
-				9D5163B81C178BE5006AD19F /* TableViewController.swift */,
 				9D8D89631C0FB85300AEB168 /* MyRidesTableViewController.swift */,
 				9D8D89671C0FB86B00AEB168 /* MyRidesTableViewCell.swift */,
 			);
@@ -180,6 +177,7 @@
 				TargetAttributes = {
 					81BA81441A49DA1800E65899 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = DER5XLME89;
 					};
 				};
 			};
@@ -236,7 +234,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D8D89681C0FB86B00AEB168 /* MyRidesTableViewCell.swift in Sources */,
-				9D5163B91C178BE5006AD19F /* TableViewController.swift in Sources */,
 				9D8D89621C0FB84800AEB168 /* FindRidesTableViewController.swift in Sources */,
 				9D8D895C1C0FB82700AEB168 /* MainMenuViewController.swift in Sources */,
 				9D5163B71C178802006AD19F /* RidesOfferedByMeTableViewCell.swift in Sources */,
@@ -347,26 +344,36 @@
 		81BA81651A49DA1800E65899 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parse.dubrides1;
 				PRODUCT_NAME = "ParseStarterProject-Swift";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
 		81BA81661A49DA1800E65899 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.parse.dubrides1;
 				PRODUCT_NAME = "ParseStarterProject-Swift";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -21,10 +21,7 @@ class RidesOfferedByMeTableViewCell: PFTableViewCell {
     
     
     @IBAction func delRide(sender: UIButton) {
-        let view = self.superview?.superview
-        
-        let tableView = view as! UITableView
-        
+     
         
 
         
@@ -36,7 +33,8 @@ class RidesOfferedByMeTableViewCell: PFTableViewCell {
             } else if let ride = ride {
                 
                 ride.deleteInBackground()
-                tableView.deleteRowsAtIndexPaths([self.index!], withRowAnimation: .Fade)
+                self.removeFromSuperview()
+
             
             
             }

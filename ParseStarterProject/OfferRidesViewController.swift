@@ -17,6 +17,9 @@ class OfferRidesViewController: UIViewController {
     @IBOutlet weak var seats: UITextField!
     @IBOutlet weak var price: UITextField!
     
+    var datepicker = UIDatePicker()
+    
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         origin.resignFirstResponder()
         destination.resignFirstResponder()
@@ -27,10 +30,21 @@ class OfferRidesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        date.inputView = datepicker
+        
+        datepicker.addTarget(self, action: "updateTextField:", forControlEvents:.ValueChanged)
+        
         // Do any additional setup after loading the view.
     }
-
+    
+    func updateTextField (sender: UIDatePicker!) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy hh:mm a"
+        let strDate = dateFormatter.stringFromDate(datepicker.date)
+        date.text = strDate
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,20 +80,7 @@ class OfferRidesViewController: UIViewController {
             ride.saveInBackgroundWithBlock {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
-                    let currentuser = PFUser.currentUser()
-                    currentuser?.addObject(ride.objectId!, forKey: "ridelist")
-                    
-                    
-                    currentuser!.saveInBackgroundWithBlock {
-                        (success: Bool, error: NSError?) -> Void in
-                        if (success) {
-                            
-                            print("success")
-                            
-                        } else {
-                            print(error?.description)
-                        }
-                    }
+            
                     self.performSegueWithIdentifier("toMain", sender: nil)
                     
                 } else {
@@ -89,6 +90,7 @@ class OfferRidesViewController: UIViewController {
         }
         
     }
+    
 
     /*
     // MARK: - Navigation
@@ -99,5 +101,6 @@ class OfferRidesViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+ 
 
 }

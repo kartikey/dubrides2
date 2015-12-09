@@ -12,6 +12,11 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        email.resignFirstResponder()
+        password.resignFirstResponder()
+    }
 
     override func viewDidAppear(animated: Bool) {
         
@@ -29,6 +34,9 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func login(sender: UIButton) {
+        
+        email.resignFirstResponder()
+        password.resignFirstResponder()
         
         if email.text! == "" || password.text! == "" {
             print("Fields cannot be blank")

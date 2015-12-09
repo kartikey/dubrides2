@@ -45,29 +45,35 @@ class RegisterViewController: UIViewController {
             print("passwords do not match")
         }
         else {
-            let user = PFUser()
-            user.username = email.text!
-            user.password = password.text!
-            user.email = email.text!
-            user["ridelist"] = [String]()
-            
-            
-            user.signUpInBackgroundWithBlock {
-                (succeeded: Bool, error: NSError?) -> Void in
-                if let error = error {
-                    let errorString = error.userInfo["error"] as? NSString
-                    print(errorString)
-                } else {
-                    PFUser.logOutInBackgroundWithBlock{ (error) -> Void in
-                        if let _ = error {
-                            print("log out didnt work")
-                        }else {
-                            self.performSegueWithIdentifier("toLogin", sender: nil)
+            if email.text!.hasSuffix("@uw.edu") {
+                let user = PFUser()
+                user.username = email.text!
+                user.password = password.text!
+                user.email = email.text!
+                user["ridelist"] = [String]()
+                
+                
+                user.signUpInBackgroundWithBlock {
+                    (succeeded: Bool, error: NSError?) -> Void in
+                    if let error = error {
+                        let errorString = error.userInfo["error"] as? NSString
+                        print(errorString)
+                    } else {
+                        PFUser.logOutInBackgroundWithBlock{ (error) -> Void in
+                            if let _ = error {
+                                print("log out didnt work")
+                            }else {
+                                self.performSegueWithIdentifier("toLogin", sender: nil)
+                            }
                         }
                     }
                 }
+
+                
+            } else {
+                print("not uw email")
             }
-        }
+                    }
     }
 
     /*
