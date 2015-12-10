@@ -18,14 +18,26 @@ class FindRideTableViewCell: PFTableViewCell {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var seats: UILabel!
     var rideid: String?
-    var joined:Bool = false
-    @IBAction func join(sender: UIButton) {
+    var joined:Bool!
+    let query = PFQuery(className:"rides")
+    
+    override func layoutSubviews() {
+        let currentuser = PFUser.currentUser()
+        if currentuser!["ridelist"] != nil && currentuser!["ridelist"].containsObject(self.rideid!){
+                self.button.setTitle("Leave", forState: .Normal)
+                joined = true
+        } else{
+            self.button.setTitle("Join", forState: .Normal)
+            joined = false
+        }
+        
+    }
+        @IBAction func join(sender: UIButton) {
         
         let view = self.superview?.superview
         
         let tableView = view as! UITableView
-        
-        let query = PFQuery(className:"rides")
+
 
         if !joined{
             
@@ -53,7 +65,8 @@ class FindRideTableViewCell: PFTableViewCell {
                                 (success: Bool, error: NSError?) -> Void in
                                 if (success) {
                                     print("success")
-                                    
+                                    self.joined = !self.joined
+                                    tableView.reloadData()
                                 } else {
                                     print(error?.description)
                                 }
@@ -67,11 +80,9 @@ class FindRideTableViewCell: PFTableViewCell {
                     }
                 }
             }
-            tableView.reloadData()
             }
+           
             
-            joined = !joined
-            button.setTitle("Leave", forState: .Normal)
         } else{
             
             query.getObjectInBackgroundWithId(rideid!) {
@@ -99,7 +110,8 @@ class FindRideTableViewCell: PFTableViewCell {
                                     (success: Bool, error: NSError?) -> Void in
                                     if (success) {
                                         print("success")
-                                        
+                                        self.joined = !self.joined
+                                        tableView.reloadData()
                                     } else {
                                         print(error?.description)
                                     }
@@ -111,17 +123,14 @@ class FindRideTableViewCell: PFTableViewCell {
                                 print(error)
                             }
                         }
+                        
                     }
                 }
-                tableView.reloadData()
             }
             
-            joined = !joined
-            button.setTitle("Join", forState: .Normal)
+            
         }
-        
-        
-        
+
     }
     
 

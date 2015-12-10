@@ -53,11 +53,10 @@ class MyRidesTableViewCell: PFTableViewCell {
                                 }
                             }
                             
-                            
-                            
                         } else {
                             print(error)
                         }
+                        
                     }
                 }
             }
