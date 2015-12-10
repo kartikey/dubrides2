@@ -88,7 +88,7 @@ class OfferRidesViewController: UIViewController {
                 (success: Bool, error: NSError?) -> Void in
                 if (success) {
                     // UIAlertController
-                    let alertController = UIAlertController(title: nil, message:"Your ride has been created.", preferredStyle:.Alert)
+                    let alertController = UIAlertController(title: nil, message:"Successfully created.", preferredStyle:.Alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {(action) -> Void in
                         self.performSegueWithIdentifier("toMain", sender: nil)
                         
